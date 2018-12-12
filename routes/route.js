@@ -3,7 +3,7 @@ var Story = mongoose.model( 'Story' );
 
 
 exports.FuncIndex=function(req,res){
-  res.render('RajIndex',{session:req.session});
+  res.render('Rajindex',{session:req.session});
 //rendering Rajindex.ejs + send var sessoin:request.session to Rajindex.ejs
 }//1.1.2 response.render(Rajindex.ejs + req.session) http://localhost:8080/
 
