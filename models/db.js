@@ -9,9 +9,9 @@ var SALT_WORK_FACTOR = 10;//another input into hashing algorithm, we consider as
 
 //var dbURI = 'mongodb://localhost/test'; 
 
-var dbURI = 'mongodb://localhost/RajDB';  //slide 33 connecting to default port and database name test, 
-//Mlab// var dbURI = 'mongodb://Rajiv:RajivDB1@ds061360.mlab.com:61360/rajivmongodb-v1';
-
+//local// var dbURI = 'mongodb://localhost/RajDB';  //slide 33 connecting to default port and database name test, 
+//Mlab//  var dbURI = 'mongodb://Rajiv:RajivDB1@ds061360.mlab.com:61360/rajivmongodb-v1';
+var dbURI = 'mongodb://Rajiv:RajivDB1@ds061360.mlab.com:61360/rajivmongodb-v1';
 
 //if test database does not exist then it will create and start using the database.  
 //var dbURI = 'mongodb://localhost:27107/test';  //same as above but showing the port number
