@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stories</title>
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <% include partials/sidebarMenu.ejs %>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <!-- <p>Coming Soon!</p> -->
+            <!-- Story Start Showing 1:40:00-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                       <a href="#menu-toggle" class="btn btn-success" id="menu-toggle">Toggle Screen</a><br/>
+                        <% if( typeof(stories) !== 'undefined' ) {%><!--if undefine dont show below -->
+                            <!--If stories in DB then use forloop, bring all story and render it-->
+                           <% for(var i=0; i < stories.length; i++) { %><!--iterante each story-->
+                            <!--Read all story and render it, stories obj array.length-->
+                               <h1><%- stories[i].title %></h1><!-- Inside EJS tag %storie.1 title %-->
+                               <h4>Created by <code><%=stories[i].author%> on <%-stories[i].created_at.toUTCString()  %> </code></h4><br/>
+                               <!-- when storing default date, its more cryptic way, using UTC, easy to read humanway-->
+                               <p><%- stories[i].summary %>  <b>- Read the full story <a href='/stories/<%- stories[i].slug%>'>Slug Link Here</a> </b></p>
+                               <!-- href='/route/stories[1].slug(link)--> 
+                               <br/>
+                           <% } %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <!-- Story End Showing -->
+        </div>
+    </div>
+    <% include partials/jsIncludes.ejs %>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+</body>
+</html>
+
